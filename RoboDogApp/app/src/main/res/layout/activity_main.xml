@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:keepScreenOn="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/title"
+            android:textColor="@color/text"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="12dp"
+            android:gravity="center"
+            android:text="@string/st_idle"
+            android:textColor="@color/muted"
+            android:textSize="14sp" />
+
+        <!-- ========== সংযোগ ========== -->
+        <LinearLayout style="@style/Card">
+
+            <RadioGroup
+                android:id="@+id/rgMode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rbWifi"
+                    style="@style/Choice"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:text="@string/mode_wifi" />
+
+                <RadioButton
+                    android:id="@+id/rbBle"
+                    style="@style/Choice"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/mode_ble" />
+            </RadioGroup>
+
+            <LinearLayout
+                android:id="@+id/rowWifi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/edtIp"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_input"
+                    android:digits="0123456789."
+                    android:hint="@string/ip_hint"
+                    android:importantForAutofill="no"
+                    android:inputType="numberDecimal"
+                    android:maxLines="1"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="12dp"
+                    android:textColor="@color/text"
+                    android:textColorHint="@color/muted"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/btnFind"
+                    style="@style/Btn"
+                    android:layout_width="96dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/find" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txtModeHelp"
+                style="@style/Hint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="@string/wifi_help" />
+
+            <Button
+                android:id="@+id/btnConnect"
+                style="@style/Btn.Primary"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/connect" />
+        </LinearLayout>
+
+        <!-- ========== চলাফেরা ========== -->
+        <LinearLayout style="@style/Card">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="84dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/btnFwd"
+                    style="@style/Btn.Pad"
+                    android:layout_width="0dp"
+                    android:layout_height="84dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:text="@string/pad_fwd" />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="84dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnLeft"
+                    style="@style/Btn.Pad"
+                    android:layout_width="0dp"
+                    android:layout_height="84dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:text="@string/pad_left" />
+
+                <Button
+                    android:id="@+id/btnStop"
+                    style="@style/Btn.Stop"
+                    android:layout_width="0dp"
+                    android:layout_height="84dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:text="@string/pad_stop" />
+
+                <Button
+                    android:id="@+id/btnRight"
+                    style="@style/Btn.Pad"
+                    android:layout_width="0dp"
+                    android:layout_height="84dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:text="@string/pad_right" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="84dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/btnBack"
+                    style="@style/Btn.Pad"
+                    android:layout_width="0dp"
+                    android:layout_height="84dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:text="@string/pad_back" />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="84dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <CheckBox
+                android:id="@+id/chkTap"
+                style="@style/Choice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="@string/tap_mode"
+                android:textColor="@color/muted"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- ========== গতি ও ধাপ ========== -->
+        <LinearLayout style="@style/Card">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/Label"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/speed" />
+
+                <TextView
+                    android:id="@+id/txtSpeed"
+                    style="@style/Value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5" />
+            </LinearLayout>
+
+            <SeekBar
+                android:id="@+id/sbSpeed"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:max="10"
+                android:min="1"
+                android:progress="5" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/Label"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/stride" />
+
+                <TextView
+                    android:id="@+id/txtStride"
+                    style="@style/Value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="30°" />
+            </LinearLayout>
+
+            <SeekBar
+                android:id="@+id/sbStride"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:max="45"
+                android:min="10"
+                android:progress="30" />
+
+            <RadioGroup
+                android:id="@+id/rgGait"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rbGaitStable"
+                    style="@style/Choice"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:text="@string/gait_stable" />
+
+                <RadioButton
+                    android:id="@+id/rbGaitFast"
+                    style="@style/Choice"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/gait_fast" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <!-- ========== ভঙ্গি ========== -->
+        <LinearLayout style="@style/Card">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnStand"
+                    style="@style/Btn"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_margin="3dp"
+                    android:layout_weight="1"
+                    android:text="@string/act_stand" />
+
+                <Button
+                    android:id="@+id/btnSit"
+                    style="@style/Btn"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_margin="3dp"
+                    android:layout_weight="1"
+                    android:text="@string/act_sit" />
+
+                <Button
+                    android:id="@+id/btnLie"
+                    style="@style/Btn"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_margin="3dp"
+                    android:layout_weight="1"
+                    android:text="@string/act_lie" />
+
+                <Button
+                    android:id="@+id/btnHi"
+                    style="@style/Btn"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_margin="3dp"
+                    android:layout_weight="1"
+                    android:text="@string/act_hi" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- ========== ক্যালিব্রেশন ========== -->
+        <Button
+            android:id="@+id/btnCalToggle"
+            style="@style/Btn"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="12dp"
+            android:text="@string/cal_show" />
+
+        <LinearLayout
+            android:id="@+id/calPanel"
+            style="@style/Card"
+            android:visibility="gone">
+
+            <TextView
+                style="@style/Hint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/cal_help" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnCalStand"
+                    style="@style/Btn"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_weight="1"
+                    android:text="@string/cal_stand" />
+
+                <Button
+                    android:id="@+id/btnCalFwd"
+                    style="@style/Btn"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_weight="1"
+                    android:text="@string/cal_forward" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/legsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:orientation="vertical" />
+
+            <Button
+                android:id="@+id/btnCalReset"
+                style="@style/Btn"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="12dp"
+                android:text="@string/cal_reset" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

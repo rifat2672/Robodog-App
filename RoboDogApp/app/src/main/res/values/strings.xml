@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Robo Dog</string>
+    <string name="title">🐕 Robo Dog</string>
+
+    <!-- সংযোগ -->
+    <string name="mode_wifi">WiFi</string>
+    <string name="mode_ble">Bluetooth</string>
+    <string name="ip_hint">ESP32 এর IP</string>
+    <string name="find">খোঁজো</string>
+    <string name="finding">খুঁজছি…</string>
+    <string name="connect">সংযোগ করো</string>
+    <string name="disconnect">বিচ্ছিন্ন করো</string>
+    <string name="cancel">বাতিল</string>
+    <string name="wifi_help">ESP32 এর হটস্পটে থাকলে IP 192.168.4.1। রাউটারে থাকলে \"খোঁজো\" চাপো।</string>
+    <string name="ble_help">ESP32 এর কাছে থাকো। Pairing লাগবে না, app নিজেই RoboDog খুঁজে নেবে।</string>
+
+    <!-- অবস্থা -->
+    <string name="st_idle">সংযোগ নেই</string>
+    <string name="st_wifi_connecting">WiFi তে %1$s এর সাথে সংযোগ হচ্ছে…</string>
+    <string name="st_ble_searching">Bluetooth এ RoboDog খুঁজছি…</string>
+    <string name="st_connected_wifi">WiFi তে সংযুক্ত ✓ (%1$s)</string>
+    <string name="st_connected_ble">Bluetooth এ সংযুক্ত ✓ (%1$s)</string>
+    <string name="st_disconnected">সংযোগ বিচ্ছিন্ন</string>
+    <string name="st_moving_f">সামনে যাচ্ছে</string>
+    <string name="st_moving_b">পেছনে যাচ্ছে</string>
+    <string name="st_moving_l">বামে ঘুরছে</string>
+    <string name="st_moving_r">ডানে ঘুরছে</string>
+
+    <!-- চলাফেরা -->
+    <string name="pad_fwd">▲\nসামনে</string>
+    <string name="pad_back">▼\nপেছনে</string>
+    <string name="pad_left">◀\nবামে</string>
+    <string name="pad_right">▶\nডানে</string>
+    <string name="pad_stop">■\nথামো</string>
+    <string name="tap_mode">একবার চাপলেই চলবে (ধরে রাখতে হবে না)</string>
+
+    <!-- গতি -->
+    <string name="speed">গতি</string>
+    <string name="stride">ধাপের দৈর্ঘ্য</string>
+    <string name="stride_value">%1$d°</string>
+    <string name="gait_stable">স্থির হাঁটা</string>
+    <string name="gait_fast">দ্রুত হাঁটা</string>
+
+    <!-- ভঙ্গি -->
+    <string name="act_stand">দাঁড়াও</string>
+    <string name="act_sit">বসো</string>
+    <string name="act_lie">শোও</string>
+    <string name="act_hi">হাই 👋</string>
+
+    <!-- ক্যালিব্রেশন -->
+    <string name="cal_show">ক্যালিব্রেশন ▾</string>
+    <string name="cal_hide">ক্যালিব্রেশন ▴</string>
+    <string name="cal_help">রোবটকে হাতে উঁচু করে ধরো।\n১. \"সোজা দাঁড়\" চাপো। কোনো পা খাড়া নিচে না থাকলে − / + দিয়ে ঠিক করো (+ চাপলে পা সামনে যায়)।\n২. \"সব পা সামনে\" চাপো। কোনো পা পেছনে হেললে ওই পায়ের \"উল্টো\" টিক দাও।\nসব সেটিং ESP32 এ নিজে থেকে সেভ হয়।</string>
+    <string name="cal_stand">সোজা দাঁড়</string>
+    <string name="cal_forward">সব পা সামনে</string>
+    <string name="cal_reset">সব রিসেট</string>
+    <string name="invert">উল্টো</string>
+    <string name="minus">−</string>
+    <string name="plus">+</string>
+    <string name="leg_label">%1$s\nGPIO %2$d</string>
+
+    <!-- বার্তা -->
+    <string name="not_connected">আগে সংযোগ করো</string>
+    <string name="found_ip">RoboDog পাওয়া গেছে: %1$s</string>
+    <string name="not_found_ip">WiFi তে RoboDog পাওয়া যায়নি। ফোন আর ESP32 একই WiFi তে আছে কিনা দেখো।</string>
+    <string name="err_wifi_connect">সংযোগ হলো না। ফোন ESP32 এর WiFi তে আছে কিনা আর IP ঠিক আছে কিনা দেখো।</string>
+    <string name="err_link_lost">সংযোগ কেটে গেছে</string>
+    <string name="err_no_ble">এই ফোনে Bluetooth LE নেই</string>
+    <string name="err_bt_off">Bluetooth চালু করে আবার \"সংযোগ করো\" চাপো</string>
+    <string name="err_ble_perm">Bluetooth permission ছাড়া সংযোগ করা যাবে না</string>
+    <string name="err_ble_not_found">RoboDog পাওয়া যায়নি। ESP32 চালু আছে কিনা দেখো। Android 11 বা পুরনো ফোনে Location ও চালু রাখতে হয়।</string>
+    <string name="err_ble_scan">Bluetooth scan চালু হলো না (code %1$d)</string>
+    <string name="err_ble_connect">Bluetooth সংযোগ ব্যর্থ (code %1$d), আবার চেষ্টা করো</string>
+    <string name="err_ble_service">RoboDog এর BLE service পাওয়া যায়নি</string>
+    <string name="err_timeout">সংযোগে বেশি সময় লাগছে, আবার চেষ্টা করো</string>
+</resources>
